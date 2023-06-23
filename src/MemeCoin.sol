@@ -1,16 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "@openzeppelin-contracts/contracts/";
+import "@openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
-contract MemeCoin {
-    uint256 public number;
-
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
-
-    function increment() public {
-        number++;
+contract MemeCoin is ERC20("This Is Fine", "TIF") {
+    constructor() {
+        _mint(msg.sender, 100 ether);
     }
 }
